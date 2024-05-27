@@ -1,0 +1,64 @@
+/* ImageCard.css */
+
+
+/* .image-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 0px);
+} */
+
+.image-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(20% - 20px);
+    margin: 10px;
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    display: block;
+}
+
+.character-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.character-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.info-left p {
+    text-align: left;
+    color: #ffffff;
+}
+
+.info-right p {
+    margin: 0;
+    text-align: right;
+    color: #ff9800;
+}
+
+.info-left p::after,
+.info-right p::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    margin-top: 5px;
+}
