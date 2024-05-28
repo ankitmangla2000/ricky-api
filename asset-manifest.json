@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ricky-api/static/css/main.ad2c40f4.css",
-    "main.js": "/ricky-api/static/js/main.15950ed7.js",
+    "main.css": "/ricky-api/static/css/main.0ca1783e.css",
+    "main.js": "/ricky-api/static/js/main.269826c4.js",
     "static/js/453.9a2f9583.chunk.js": "/ricky-api/static/js/453.9a2f9583.chunk.js",
     "index.html": "/ricky-api/index.html",
-    "main.ad2c40f4.css.map": "/ricky-api/static/css/main.ad2c40f4.css.map",
-    "main.15950ed7.js.map": "/ricky-api/static/js/main.15950ed7.js.map",
+    "main.0ca1783e.css.map": "/ricky-api/static/css/main.0ca1783e.css.map",
+    "main.269826c4.js.map": "/ricky-api/static/js/main.269826c4.js.map",
     "453.9a2f9583.chunk.js.map": "/ricky-api/static/js/453.9a2f9583.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad2c40f4.css",
-    "static/js/main.15950ed7.js"
+    "static/css/main.0ca1783e.css",
+    "static/js/main.269826c4.js"
   ]
 }
