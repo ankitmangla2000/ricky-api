@@ -1,3 +1,9 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
 .image-gallery {
     display: flex;
     flex-direction: column;
@@ -15,20 +21,21 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    width: 240px;
+    width: 340px;
+    height: fit-content;
     margin: 10px;
     text-align: center;
 }
 
 .image-card img {
-    width: 240px;
-    height: 240px;
+    width: 340px;
+    height: 280px;
 }
 
 .image-card h3,
 .image-card h4 {
     margin: 0;
-    padding: 8px;
+    padding: 4px;
     font-size: 1.2em;
     background-color: rgb(38, 37, 37);
     color: white;

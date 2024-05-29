@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 export interface Character {
   id: number;
   name: string;
@@ -7,8 +8,14 @@ export interface Character {
   gender: string;
   status: string;
   image: string;
-  origin: string;
-  location: string;
+  origin: {
+    name: string;
+    url: string;
+  };
+  location: {
+    name: string
+    url: string;
+};
   created: string;
 }
 
@@ -28,6 +35,13 @@ export const fetchCharacters = async (
   if (gender) query += `&gender=${gender}`;
   if (status) query += `&status=${status}`;
 
-  const response = await axios.get(API_URL + query);
-  return response.data.results;
+  try {
+    const response = await axios.get(API_URL + query);
+    return response.data.results;
+  } catch (error) {
+    if (axios.isAxiosError(error) && error.response?.status === 404) {
+      return [];
+    }
+    throw error;
+  }
 };

@@ -14,13 +14,26 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    width: calc(20% - 20px);
+    /* width: calc(20% - 20px); */
     margin: 10px;
     text-align: center;
+    position: relative;
+}
+
+
+/* .image-oncard {
+    position: relative;
+} */
+
+.image-text {
+    position: absolute;
+    /* bottom: 133px; */
+    top: 81%;
+    text-align: left;
+    width: -webkit-fill-available;
 }
 
 .image-container img {
-    width: 100%;
     display: block;
 }
 
@@ -61,4 +74,10 @@
     height: 1px;
     background-color: #ddd;
     margin-top: 5px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    background-color: #323131;
 }
