@@ -8,67 +8,68 @@ interface ImageCardProps {
 }
 
 const ImageCard: React.FC<ImageCardProps> = ({ character }) => {
-  
+  const imageStyle = {
+    backgroundImage: `url(${character.image})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    width: '100%',
+    height: '100%',
+  };
   return (
     <div className="image-card">
-{/* 
-       <div className='row container-fluid'>
-        <div className='col-md-3'>
-
-        </div>
-        <div ></div>
-       </div> */}
-
-
-
-
-      <div className="image-container">
+      <div className="image-container" >
         <img className="image-oncard" src={character.image} alt={character.name} />
         <div className="image-text">
-          <h3 style={{fontSize:"15px",backgroundColor:"rgba(0,0,0,0.6)",padding:"5px"}}>{character.name}</h3>
-          <h4 style={{fontSize:"13px",backgroundColor:"rgba(0,0,0,0.6)",padding:"5px"}}>id: {character.id} - created 7 years</h4>
+          <h3 >{character.name}</h3>
+          <h4 >id: {character.id} - created 7 years</h4>
+         
         </div>
       </div>
       
         <div className="info">
-          <p style={{color:"#ffffff",marginLeft:"5px"}}>Status</p>
-          <p style={{color:"#df870f",marginRight:"8px"}}>{character.status}</p>
+          <p className="left-side" >Status</p>
+          <p className="right-side">{character.status}</p>
         </div>
 
      
-        <hr style={{margin:"0 10px 0 10px", color:"#201f1f"}}/>
+        <hr className="line-style"/>
         <div className="info" >
         
-          <p style={{color:"#ffffff",marginLeft:"5px"}}>Species</p>
-          <p style={{color:"#df870f",marginRight:"8px"}}>{character.species}</p>
+          <p className="left-side" >Species</p>
+          <p className="right-side" >{character.species}</p>
        
 
       </div>
-        <hr style={{margin:"0 10px 0 10px", color:"white"}}/>
+        <hr className="line-style"/>
         <div className="info" >
        
-          <p style={{color:"#ffffff",marginLeft:"5px"}}>Gender</p>
-          <p style={{color:"#df870f",marginRight:"8px"}}>{character.gender}</p>
+          <p className="left-side">Gender</p>
+          <p className="right-side" >{character.gender}</p>
        
 
       </div>
-        <hr style={{margin:"0 10px 0 10px", color:"white"}}/>
-        <div className="info" >
+        <hr className="line-style"/>
+        <div className="info" style={{height:"70px", display:"flex",alignItems:"center"}}>
+          <p className="left-side" >Origin</p>
+          <div style={{flex:"1", textAlign:"right"}}>
+            <p className="right-side" style={{overflowWrap:"break-word",marginLeft:"75px"}}>
+              {character.origin.name}
+            </p>
+          </div>
+          </div>
+        <hr className="line-style"/>
+        <div className="info" style={{height:"70px", display:"flex",alignItems:"center"}}>
+          <p className="left-side">Last Location</p>
+          <div style={{flex:"1", textAlign:"right"}}>
+            <p className="right-side" style={{overflowWrap:"break-word",marginLeft:"63px"}}>
+              {character.location.name}
+            </p>
+          </div>
+          </div>
         
-          <p style={{color:"#ffffff",marginLeft:"5px"}}>Origin</p>
-          <p style={{color:"#df870f",marginRight:"8px"}}>{character.origin.name}</p>
-      
 
-      </div>
-        <hr style={{margin:"0 10px 0 10px", color:"white"}}/>
-        <div className="info" >
+    
        
-          <p style={{color:"#ffffff",marginLeft:"5px"}}>Last Location</p>
-          <p style={{color:"#df870f",marginRight:"8px"}}>{character.location.name}</p>
-        
-
-      </div>
-        <hr style={{margin:"0 10px 0 10px", color:"white"}}/>
       
       </div>
 

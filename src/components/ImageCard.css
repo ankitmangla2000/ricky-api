@@ -1,34 +1,36 @@
-/* ImageCard.css */
-
-
-/* .image-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: calc(20% - 0px);
-} */
-
 .image-container {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: none;
     overflow: hidden;
-    /* width: calc(20% - 20px); */
     margin: 10px;
     text-align: center;
+    height: 100%;
     position: relative;
+    bottom: -9px;
+    width: 340px;
+    margin-left: -2px;
 }
 
+.image-card h3 {
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    margin: 0;
+    color: white;
+    height: auto;
+}
 
-/* .image-oncard {
-    position: relative;
-} */
+.image-card h4 {
+    padding: 5px;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 51px;
+    margin: 0;
+    color: white;
+}
 
 .image-text {
     position: absolute;
-    /* bottom: 133px; */
-    top: 81%;
+    top: 70%;
     text-align: left;
     width: -webkit-fill-available;
 }
@@ -37,7 +39,13 @@
     display: block;
 }
 
-.character-name {
+.image-oncard {
+    user-select: none;
+    -webkit-user-drag: none
+}
+
+
+/* .character-name {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -47,12 +55,6 @@
     text-align: center;
     padding: 5px 0;
     margin: 0;
-}
-
-.character-info {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
 }
 
 .info-left p {
@@ -74,10 +76,27 @@
     height: 1px;
     background-color: #ddd;
     margin-top: 5px;
-}
+} */
 
 .info {
     display: flex;
     justify-content: space-between;
     background-color: #323131;
+}
+
+.left-side {
+    color: #ffffff;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.right-side {
+    color: #df870f;
+    margin-right: 8px;
+    text-align: right;
+}
+
+.line-style {
+    margin: 0 10px 0 10px;
+    color: rgb(32, 31, 31);
 }

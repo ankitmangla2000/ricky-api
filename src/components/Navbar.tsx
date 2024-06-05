@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaTimes } from 'react-icons/fa';
 
 
 interface NavbarProps {
@@ -24,12 +24,18 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onFilterChange, onReset }) =>
   const handleSearchSubmit = () => {
     onSearch(search);
   };
-
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       handleSearchSubmit();
     }
   };
+
+  const handleClearSearch = () => {
+    setSearch('');
+    onSearch('');
+  };
+  
 
   const handleSpeciesChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSpecies(e.target.value);
@@ -63,20 +69,24 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onFilterChange, onReset }) =>
   return (
     <div className="navbar">
       <div className="search-container">
-      <input
-        type="text"
-        placeholder="Search by name"
-        value={search}
-        onChange={handleSearchChange}
-        className="navbar-text"
-      />
-      <span className="search-divider">|</span>
+        <input
+          type="text"
+          placeholder="Search by name"
+          value={search}
+          onChange={handleSearchChange}
+          onKeyDown={handleKeyDown}
+          className="search-bar"
+        />
+        {search && (
+          <FaTimes className="clear-search-icon" onClick={handleClearSearch} />
+        ) }
+          <span className="search-divider">|</span>
+       
         <FaSearch className="search-icon" onClick={handleSearchSubmit} />
-
-     </div>
+      </div>
      <div className="filters-nav">
       <div className="filters-species">
-      <select value={species} onChange={handleSpeciesChange} className="navbar-text" style={{width:"110px", marginLeft:"5px"}}>
+      <select value={species} onChange={handleSpeciesChange} className="navbar-text" style={{width:"110px", marginLeft:"5px",outline:"none"}}>
         {species ? null: <option value="" disabled>Species</option>}
         <option value="">None</option>
         <option value="Human">Human</option>
@@ -87,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onFilterChange, onReset }) =>
       </select>
       </div>
       <div className="filters-gender">
-      <select value={gender} onChange={handleGenderChange} className="navbar-text" style={{ width:"110px"}}>
+      <select value={gender} onChange={handleGenderChange} className="navbar-text" style={{ width:"110px",outline:"none"}}>
         {gender ? null: <option value="" disabled>Gender</option>}
         <option value="">None</option>
         <option value="">All Genders</option>
@@ -98,7 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onFilterChange, onReset }) =>
       </select>
       </div>
       <div className="filters-status"></div>
-      <select value={status} onChange={handleStateChange} className="navbar-text"style={{width:"110px"}}>
+      <select value={status} onChange={handleStateChange} className="navbar-text"style={{width:"110px",outline:"none"}}>
       {status ? null: <option value="" disabled>Status</option>}
         <option value="">None</option>
         <option value="Alive">Alive</option>

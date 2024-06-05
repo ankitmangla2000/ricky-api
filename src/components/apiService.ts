@@ -28,7 +28,7 @@ export const fetchCharacters = async (
   limit: number = 10
 ) => {
   const { species, gender, status } = filters;
-  let query = `?page=${page}&limit=${limit}`;
+  let query =  `?page=${page}&limit=${limit}`;
   
   if (search) query += `&name=${search}`;
   if (species) query += `&species=${species}`;
@@ -37,11 +37,9 @@ export const fetchCharacters = async (
 
   try {
     const response = await axios.get(API_URL + query);
-    return response.data.results;
+    return response.data.results || []; // Return empty array if no results found
   } catch (error) {
-    if (axios.isAxiosError(error) && error.response?.status === 404) {
-      return [];
-    }
-    throw error;
+    console.error('Error fetching characters:', error);
+    return [];
   }
 };

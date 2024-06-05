@@ -1,9 +1,12 @@
+
 import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import ImageCard from './ImageCard';
 import Loader from './Loader';
 import Pagination from './Pagination';
 import { fetchCharacters, Character } from './apiService';
+import Chatbot from './chatbot';
+
 
 const ImageGallery: React.FC = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -77,7 +80,7 @@ const ImageGallery: React.FC = () => {
       ) : (
         <div className="images">
           {characters.length === 0 ? (
-            <div className="no-records">No records found</div>
+            <div className="no-records" style={{textAlign:"center",marginTop: "300px", color:"white"}}>No records to display</div>
           ) : (
             sortedCharacters.map((character) => (
               <ImageCard key={character.id} character={character} />
@@ -85,11 +88,14 @@ const ImageGallery: React.FC = () => {
           )}
         </div>
       )}
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
+      {characters.length > 0 && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      )}
+     <Chatbot/>
     </div>
   );
 };
