@@ -76,6 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onFilterChange, onReset }) =>
           onChange={handleSearchChange}
           onKeyDown={handleKeyDown}
           className="search-bar"
+          data-testid="search-input"
         />
         {search && (
           <FaTimes className="clear-search-icon" onClick={handleClearSearch} />
@@ -124,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch, onFilterChange, onReset }) =>
         </label>
         <span className="ascending-text">{sortAscending ? 'Ascending' : 'Descending'}</span>
       </div>
-      <button className="reset-button" onClick={handleReset}>Reset Filter</button>
+      <button data-testid="reset-button" className="reset-button" onClick={handleReset}>Reset Filter</button>
     </div>
     </div>
   );

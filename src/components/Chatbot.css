@@ -1,11 +1,6 @@
-/* General styling for the App */
-
 .App {
     font-family: Arial, Helvetica, sans-serif;
 }
-
-
-/* Floating button to toggle the chatbot visibility */
 
 .chatbot-toggle {
     position: fixed;
